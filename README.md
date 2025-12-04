@@ -100,5 +100,7 @@ Enquanto a solução O(N²) cresce rapidamente e é inviável para grandes entra
 
 ## ✍️ Autor
 
-Desenvolvido por **Matheus Vinícius Silva Freire de Castro**
-Projeto acadêmico – Estruturas de Dados
+ **Matheus Vinícius Silva Freire de Castro**
+
+
+DIM0117 - ESTRUTURAS DE DADOS BÁSICAS II - T01 (2025.2) 
