@@ -26,16 +26,16 @@ int main() {
     char letra = S[i];
 
     if (letra == 'R')
-      x = x++;
+      x++;
 
     else if (letra == 'L')
-      x = x--;
+      x--;
 
     else if (letra == 'U')
-      y = y++;
+      y++;
 
     else if (letra == 'D')
-      y = y--;
+      y--;
 
     // std::cout << "Posicaol: (" << x << ", " << y << ")\n";
     posisoes.push_back({x, y});
@@ -44,7 +44,7 @@ int main() {
   for (int c = 0; c < posisoes.size(); c++) {
     for (int j = c + 1; j < posisoes.size(); j++) {
       if (posisoes[c] == posisoes[j]) {
-        repete = true;
+        //repete = true;
       }
     }
   }

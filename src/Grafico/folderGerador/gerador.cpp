@@ -1,5 +1,4 @@
 #include <cstdlib>
-#include <ctime>
 #include <iostream>
 
 int main(int argc, char *argv[]) {
@@ -9,18 +8,16 @@ int main(int argc, char *argv[]) {
 
   int N = std::atoi(argv[1]);
 
-  std::srand(std::time(nullptr));
-
   std::cout << N << "\n";
 
+  // Caminho sem repetição garantida (zig-zag)
   for (int i = 0; i < N; i++) {
-    int r = std::rand() % 4;
-    if (r == 0)
+    if (i % 4 == 0)
       std::cout << 'R';
-    else if (r == 1)
-      std::cout << 'L';
-    else if (r == 2)
+    else if (i % 4 == 1)
       std::cout << 'U';
+    else if (i % 4 == 2)
+      std::cout << 'L';
     else
       std::cout << 'D';
   }
