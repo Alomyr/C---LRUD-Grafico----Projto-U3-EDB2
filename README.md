@@ -95,6 +95,67 @@ O resultado evidencia claramente a superioridade da abordagem eficiente para gra
 
 Os experimentos demonstram na prática a importância da escolha correta de estruturas de dados.
 Enquanto a solução O(N²) cresce rapidamente e é inviável para grandes entradas, a solução O(N log N) mantém desempenho estável e escalável.
+___
+
+
+## Para compilar
+
+#### como os aquivos CSV's e ja estao feito para rodar o grafico basta (dentro da pasta src/Grafico/)
+
+- caso nao tenha a matplotlib:
+
+        sudo apt update
+        sudo apt install python3-matplotlib
+
+- se ja tiver a matplotlib:
+
+        python3 plot.py
+
+
+na pasta C-LRUD_CPP para compilar e rodar o aquivo eficiente usando set:
+    
+        g++ CLRUDEficiente.cpp -o ef
+        ./enf 
+
+na pasta C-LRUD_CPP para compilar e rodar o aquivo ineficiente usando vector:
+
+        g++ CLRUDIneficiente.cpp -o inef
+        ./inf
+
+para rodar o grafico:
+- na pasta grafico/folderGeradr
+        g++ gerador.cpp -O2 -o gerador
+
+        ./gerador 1000    > input_1000.txt
+        ./gerador 5000    > input_5000.txt
+        ./gerador 10000   > input_10000.txt
+        ./gerador 20000   > input_20000.txt
+        ./gerador 50000   > input_50000.txt
+        ./gerador 100000  > input_100000.txt
+        ./gerador 200000  > input_200000.txt
+
+
+        ./inef < input_1000.txt    >> ineficiente.csv
+        ./inef < input_5000.txt    >> ineficiente.csv
+        ./inef < input_10000.txt   >> ineficiente.csv
+        ./inef < input_20000.txt   >> ineficiente.csv
+        ./inef < input_50000.txt   >> ineficiente.csv
+        ./inef < input_100000.txt  >> ineficiente.csv
+        ./inef < input_200000.txt  >> ineficiente.csv
+
+        ./ef < input_1000.txt    >> eficiente.csv
+        ./ef < input_5000.txt    >> eficiente.csv
+        ./ef < input_10000.txt   >> eficiente.csv
+        ./ef < input_20000.txt   >> eficiente.csv
+        ./ef < input_50000.txt   >> eficiente.csv
+        ./ef < input_100000.txt  >> eficiente.csv
+        ./ef < input_200000.txt  >> eficiente.csv
+
+
+e por ultimo mande inicialize o plot do gratico estando dentro da pasta src/Grafico/
+
+        python3 plot.py
+
 
 ---
 
