@@ -1,14 +1,14 @@
 #include <iostream>
+#include <set>
 #include <string>
 #include <utility>
-#include <vector>
 
 int main() {
 
   int N, x = 0, y = 0;
   std::string S;
 
-  std::vector<std::pair<int, int>> posisoes;
+  std::set<std::pair<int, int>> myset;
   bool repete = false;
 
   std::cin >> N;
@@ -17,34 +17,31 @@ int main() {
   if (N < 1 or S.length() != N) {
     return 0;
   }
-  posisoes.push_back({0, 0});
+  myset.insert({0, 0});
 
   for (int i = 0; i < N; i++) {
     char letra = S[i];
 
     if (letra == 'R')
-      x = x++;
+      x++;
 
     else if (letra == 'L')
-      x = x--;
+      x--;
 
     else if (letra == 'U')
-      y = y++;
+      y++;
 
     else if (letra == 'D')
-      y = y--;
+      y--;
 
     // std::cout << "Posicaol: (" << x << ", " << y << ")\n";
-    posisoes.push_back({x, y});
+    if (myset.find({x, y}) != myset.end()) {
+      repete = true;
+      break;
+    }
+    myset.insert({x, y});
   }
 
-  for (int c = 0; c < posisoes.size(); c++) {
-    for (int j = c + 1; j < posisoes.size(); j++) {
-      if (posisoes[c] == posisoes[j]) {
-        repete = true;
-      }
-    }
-  }
   if (repete) {
     std::cout << "Yes";
   } else {

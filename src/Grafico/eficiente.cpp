@@ -1,14 +1,16 @@
+#include <chrono>
 #include <iostream>
 #include <set>
 #include <string>
 #include <utility>
-
+//para gerar o grafico
 int main() {
 
   int N, x = 0, y = 0;
   std::string S;
 
   std::set<std::pair<int, int>> myset;
+  auto inicio = std::chrono::high_resolution_clock::now();
   bool repete = false;
 
   std::cin >> N;
@@ -42,10 +44,12 @@ int main() {
     myset.insert({x, y});
   }
 
-  if (repete) {
-    std::cout << "Yes";
-  } else {
-    std::cout << "No";
-  }
+  auto fim = std::chrono::high_resolution_clock::now();
+  double tempo =
+      std::chrono::duration<double, std::milli>(fim - inicio).count();
+
+  // SAÍDA PARA O GRÁFICO
+  std::cout << N << " " << tempo << "\n";
+
   return 0;
 }
